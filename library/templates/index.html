@@ -1,0 +1,36 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block title %} {% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
+
+
+  
+    <div class="container-fluid py-2 text-center text-white" style="background-image: url('https://th.bing.com/th/id/R.cd049325ef605a08bfd2e7878e164251?rik=gIlrjzXwokSUSA&riu=http%3a%2f%2fwww.elibrarysoftware.com%2fimg%2fblog%2f1.jpg&ehk=Q7g%2fY7x3QelvoRxjyIM3ZXUQmP7O63E13jeDGf9DKg4%3d&risl=&pid=ImgRaw&r=0'); background-size: cover; background-position: center; width: 100%; height: 46.5vh;">
+    
+        <h1 class="display-4 mb-4 fw-bold">Welcome to Sparrow Library Management System</h1>
+       
+        
+        <p class="lead">You can register as a student and issue any book through the admin. After that, you need to return the book within 14 days or a fine of Rs 5 will be charged per day until the book is returned.</p>
+        <a href="/student_registration/" class="btn btn-primary btn-lg">Register as Student</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid py-2 text-center text-white" style="background-color: rgba(0,0,0,0.5)">
+   
+    <div class="row">
+      <div class="col-lg-6 text-center mb-5">
+        <img src="{% static 'R.png' %}" class="img-fluid rounded-circle mb-3" width="200" height="200" alt="">
+        <h2 class="fw-bold mb-2">Admin</h2>
+        <a class="btn btn-outline-light" href="/admin_login/">Admin Login</a>
+      </div>
+      <div class="col-lg-6 text-center mb-5">
+        <img src="{% static 'OIP.jpeg' %}" class="img-fluid rounded-circle mb-3" width="200" height="200" alt="">
+        <h2 class="fw-bold mb-2">Student</h2>
+        <a class="btn btn-outline-light" href="/student_login/">Student Login</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}

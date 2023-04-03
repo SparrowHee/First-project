@@ -1,0 +1,91 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block title %} Library Management System {% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
+<div class="container">
+    <style type="text/css">
+      body {
+        background-image: url("https://th.bing.com/th/id/R.7efb444200d4b4904fedddd968c34396?rik=Y9M8kGJwHjM9gg&riu=http%3a%2f%2fwallpapercave.com%2fwp%2fUvpC1jt.jpg&ehk=xDqh%2bVTXk7%2fP1p%2bgvH9oQ0eEJBTYbr%2f4dquQM8ujJG8%3d&risl=&pid=ImgRaw&r=0");
+        background-size: cover;
+      }
+    .container {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f7f7f7;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .form-group {
+        margin-bottom: 20px;
+      }
+      
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      
+      input[type="text"],
+      input[type="password"] {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      
+      button[type="submit"] {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+      }
+      
+      button[type="submit"]:hover {
+        background-color: #0069d9;
+      }
+      
+      .text-center {
+        text-align: center;
+      }
+    </style>
+      
+<br>
+<h1 class="text-center"><u>Admin Login</u></h1><br>
+<p><b>Note:</b> Only the admin can login from here. No student will be allowed to login.</p>
+    <form method="POST"> {% csrf_token %}
+
+    <div class="row mt-4">
+        <div class="form-group col-md-12">
+            <label><i style="font-weight: bold;">Username</i></label>
+            <input type="text" class="form-control mt-2" name="username" placeholder="Enter Username" required>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="form-group col-md-12">
+            <label><i style="font-weight: bold;">Password</i></label>
+            <input type="password" class="form-control mt-2" name="password" placeholder="Enter Password" required>
+        </div>
+    </div>
+    <button  type="submit" class="btn btn-outline-primary mt-4">Login</button>
+</div>
+{% endblock %}
+{% block js %}
+<script>
+    {% if alert %}
+    alert("Invalid Username or Password.")
+    document.location = "/admin_login"
+    {% endif %}
+</script>
+{% endblock %}
